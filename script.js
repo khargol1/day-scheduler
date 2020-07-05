@@ -1,17 +1,9 @@
-
 var times = ['9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00'];
 var taskList = []
-//Minimum requirements
+
 //Display current day and time top of page
 var currentTime = moment().format("dddd MMMM Do hh:mm");
 $("#currentDay").html(currentTime);
-
-
-
-//Event listener for text area  (apparently not needed for text areas)
-//figure out which one got clicked
-//allow modification
-//save to local storage this done by save icon on right
 
 $('button').on('click', function(event){
     //console.log(this);
@@ -19,10 +11,8 @@ $('button').on('click', function(event){
     for(var i = 0; i < times.length; i++){
         //console.log($('#area'+i).html());
         temp = $('#area'+i).val().trim();
-        console.log(temp);
         taskList[i] = temp;
     }
-    console.log(taskList);
     localStorage.setItem('tasks', JSON.stringify(taskList));
 });
 
